@@ -1,0 +1,21 @@
+{
+  "Comment": "Daily hourly fetch and combine weather",
+  "StartAt": "FetchNYC",
+  "States": {
+    "FetchNYC": {
+      "Type": "Task",
+      "Resource": "arn:aws:lambda:us-east-1:768445991427:function:Weather-NYC-Daily",
+      "Next": "FetchLA"
+    },
+    "FetchLA": {
+      "Type": "Task",
+      "Resource": "arn:aws:lambda:us-east-1:768445991427:function:Weather-LA-Daily",
+      "Next": "Combine"
+    },
+    "Combine": {
+      "Type": "Task",
+      "Resource": "arn:aws:lambda:us-east-1:768445991427:function:Weather-Combine-Hourly",
+      "End": true
+    }
+  }
+}

@@ -1,0 +1,6 @@
+[
+  {
+    "Id": "InvokeStateMachine",
+    "Arn": "arn:aws:states:us-east-1:768445991427:stateMachine:FluxPond-DailyWeatherFlow"
+  }
+]
